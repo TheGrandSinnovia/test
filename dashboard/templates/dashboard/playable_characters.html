@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+<!-- Page info -->
+{% block description %}{% endblock description %}
+{% block author %}{% endblock author %}
+{% block title %}Personaje{% endblock title %}
+
+<!-- Custom CSS -->
+{% block base_style %}{% endblock base_style %}
+{% block page_style %}{% endblock page_style %}
+
+<!-- Custom classes -->
+{% block html_class %}{% endblock html_class %}
+{% block body_class %}{% endblock body_class %}
+
+<!-- Navbar -->
+{% block nav-logo %}{% endblock nav-logo %}
+{% block nav-items %}
+{% endblock nav-items %}
+
+<!-- Content -->
+{% block content %}
+<h1>Hoja de personaje</h1>
+
+<p>Atributos</p>
+
+<form method="POST">
+    {% csrf_token %}
+    {% for  field in form %}
+        {{ field.label }} 
+        <br>
+        <br> 
+        {{ field }}
+        <br>
+        <br>
+    {% endfor %}
+    <input type="submit" class="btn btn-primary mx-auto" value="Submit">
+</form>
+<br>
+<a href="{% url 'dashboard:dashboard' %}" class="btn btn-primary mx-auto" role="button">Volver</a>
+{% endblock content %}
+
+<!-- Custom script -->
+{% block script %}
+{% endblock script %}

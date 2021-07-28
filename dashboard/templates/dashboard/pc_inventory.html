@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+<!-- Page info -->
+{% block description %}{% endblock description %}
+{% block author %}{% endblock author %}
+{% block title %}Lista de items{% endblock title %}
+
+<!-- Custom CSS -->
+{% block base_style %}{% endblock base_style %}
+{% block page_style %}{% endblock page_style %}
+
+<!-- Custom classes -->
+{% block html_class %}{% endblock html_class %}
+{% block body_class %}{% endblock body_class %}
+
+<!-- Navbar -->
+{% block nav-logo %}{% endblock nav-logo %}
+{% block nav-items %}
+{% endblock nav-items %}
+
+<!-- Content -->
+{% block content %}
+<table>
+    <tr>
+        <th> ID </th>
+        <th> Name </th>
+        <th> Weigth </th>
+        <th> Description </th>
+    </tr>
+    {% for item in item_list %}
+        <tr>
+        <td>{{ item.pk }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.weight }}</td>
+        <td>{{ item.description }}</td>
+        <td><a href="{% url 'dashboard:item_delete' pk item.pk %}" class="btn btn-primary mx-auto" role="button">Eliminar</a></td>
+        <td><a href="{% url 'dashboard:item_edit' pk item.pk %}" class="btn btn-primary mx-auto" role="button">Editar</a></td>
+        </tr>
+    {% endfor %}
+<table>
+<p>
+<a href="{% url 'dashboard:item' pk %}" class="btn btn-primary mx-auto" role="button">Añadir</a>
+<a href="{% url 'dashboard:pc_list' %}" class="btn btn-primary mx-auto" role="button">Volver</a> 
+</p>
+{% endblock content %}
+
+<!-- Custom script -->
+{% block script %}
+{% endblock script %}
