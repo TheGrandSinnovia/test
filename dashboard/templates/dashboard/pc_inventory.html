@@ -22,13 +22,19 @@
 
 <!-- Content -->
 {% block content %}
-<table>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12">
+<table class="table table-responsive table-sm">
+    <thead>
     <tr>
-        <th> ID </th>
-        <th> Name </th>
-        <th> Weigth </th>
-        <th> Description </th>
+        <th scope="col"> ID </th>
+        <th scope="col"> Name </th>
+        <th scope="col"> Weigth </th>
+        <th scope="col"> Description </th>
     </tr>
+    </thead>
+    <tbody>
     {% for item in item_list %}
         <tr>
         <td>{{ item.pk }}</td>
@@ -39,7 +45,11 @@
         <td><a href="{% url 'dashboard:item_edit' pk item.pk %}" class="btn btn-primary mx-auto" role="button">Editar</a></td>
         </tr>
     {% endfor %}
+    </tbody>
 <table>
+</div>
+</div>
+</div>
 <p>
 <a href="{% url 'dashboard:item' pk %}" class="btn btn-primary mx-auto" role="button">Añadir</a>
 <a href="{% url 'dashboard:pc_list' %}" class="btn btn-primary mx-auto" role="button">Volver</a> 

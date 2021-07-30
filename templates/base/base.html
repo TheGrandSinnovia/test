@@ -33,19 +33,6 @@
 
   <body {% block body_class %}{% endblock body_class %}>
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="{% block nav-logo %}{% endblock nav-logo %}"></a>  
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav ml-auto">
-            <!-- Navbar items -->
-            {% block nav-items %}
-            {% endblock nav-items %}           
-          </ul>      
-        </div>          
-      </nav>
     </header>
 
     <!-- Content -->

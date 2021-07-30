@@ -22,13 +22,19 @@
 
 <!-- Content -->
 {% block content %}
-<table>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12">
+<table class="table table-responsive table-sm">
+    <thead>
     <tr>
         <th> ID </th>
         <th> Name </th>
         <th> Age </th>
         <th> Description </th>
     </tr>
+    </thead>
+    <tbody>
     {% for pc in pc_list %}
         <tr>
         <td>{{ pc.pk }}</td>
@@ -39,7 +45,11 @@
         <td><a href="{% url 'dashboard:pc_inventory' pc.pk %}" class="btn btn-primary mx-auto" role="button">Inventario</a><td>
         </tr>
     {% endfor %}
+    </tbody>
 <table>
+</div>
+</div>
+</div>
 <br>
 <a href="{% url 'dashboard:dashboard' %}" class="btn btn-primary mx-auto" role="button">Volver</a>
 {% endblock content %}
