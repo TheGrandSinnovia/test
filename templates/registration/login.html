@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-</head>
-<body>
-  {% if form.errors %}
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Page info -->
+{% block description %}{% endblock description %}
+{% block author %}{% endblock author %}
+{% block title %}Log in{% endblock title %}
+
+<!-- Custom CSS -->
+{% block base_style %}{% static 'base/css/base.css' %}{% endblock base_style %}
+{% block page_style %}{% endblock page_style %}
+
+<!-- Custom classes -->
+{% block html_class %}{% endblock html_class %}
+{% block body_class %}{% endblock body_class %}
+
+<!-- Content -->
+{% block content %}
+<div class="container">
+<div class="row mt-5">
+<div class="col-md-4 offset-md-4 mt-5">
+{% if form.errors %}
     <p>Your username and password didn't match. Please try again.</p>
   {% endif %}
 
@@ -29,11 +44,17 @@
         <td>{{ form.password }}</td>
       </tr>
     </table>
-    <input type="submit" value="login" />
+    <input class="btn btn-flat flat-purple mx-auto" type="submit" value="Login" />
     <input type="hidden" name="next" value="{{ next }}" />
   </form>
 
   {# Assumes you setup the password_reset view in your URLconf #}
   <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-</body>
-</html>
+</div>
+</div>
+</div>
+{% endblock content %}
+
+<!-- Custom script -->
+{% block script %}
+{% endblock script %}

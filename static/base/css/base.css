@@ -1,0 +1,97 @@
+body {
+    background-image: url(../img/swirl_pattern.png);
+}
+
+.bordered-box {
+    border-radius: 25px;
+    background: rgba(211, 211, 211, 0.5);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 15px;
+    padding-left: 25px;
+    overflow: auto;
+}
+
+.lobster-title {
+    font-family: 'Lobster Two', cursive;
+    font-size: 4em;
+}
+
+.menu-font {
+    font-family: 'Hahmlet', serif;
+    font-size: 1.17em;
+}
+
+.btn-flat {
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .btn-flat:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+  }
+
+  .flat-blue {
+    background-color: #55acee;
+    border-color: #1a8fe8;
+    box-shadow: 0px 5px 0px 0px #3C93D5;
+  }
+  
+  .flat-blue:hover {
+    background-color: #6FC6FF;
+  }
+  
+  .flat-green {
+    background-color: #2ecc71;
+    border-color: #25a35a;
+    box-shadow: 0px 5px 0px 0px #15B358;
+  }
+  
+  .flat-green:hover {
+    background-color: #48E68B;
+  }
+  
+  .flat-red {
+    background-color: #e74c3c;
+    border-color: #cf2b1a;
+    box-shadow: 0px 5px 0px 0px #CE3323;
+  }
+  
+  .flat-red:hover {
+    background-color: #FF6656;
+  }
+  
+  .flat-purple {
+    background-color: #9b59b6;
+    border-color: #7e4297;
+    box-shadow: 0px 5px 0px 0px #82409D;
+  }
+  
+  .flat-purple:hover {
+    background-color: #B573D0;
+  }
+  
+  .flat-orange {
+    background-color: #e67e22;
+    border-color: #be6415;
+    box-shadow: 0px 5px 0px 0px #CD6509;
+  }
+  
+  .flat-orange:hover {
+    background-color: #FF983C;
+  }
+  
+  .flat-yellow {
+    background-color: #f1c40f;
+    border-color: #c29d0b;
+    box-shadow: 0px 5px 0px 0px #D8AB00;
+  }
+  
+  .flat-yellow:hover {
+    background-color: #FFDE29;
+  }

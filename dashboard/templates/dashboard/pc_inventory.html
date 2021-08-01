@@ -8,30 +8,27 @@
 {% block title %}Lista de items{% endblock title %}
 
 <!-- Custom CSS -->
-{% block base_style %}{% endblock base_style %}
+{% block base_style %}{% static 'base/css/base.css' %}{% endblock base_style %}
 {% block page_style %}{% endblock page_style %}
 
 <!-- Custom classes -->
 {% block html_class %}{% endblock html_class %}
 {% block body_class %}{% endblock body_class %}
 
-<!-- Navbar -->
-{% block nav-logo %}{% endblock nav-logo %}
-{% block nav-items %}
-{% endblock nav-items %}
-
 <!-- Content -->
 {% block content %}
-<div class="container-fluid">
-<div class="row">
-<div class="col-md-12">
-<table class="table table-responsive table-sm">
+<div class="container">
+<div class="row justify-content-center mt-5">
+<div class="col-auto bordered-box">
+<table class="table table-responsive">
     <thead>
     <tr>
         <th scope="col"> ID </th>
         <th scope="col"> Name </th>
         <th scope="col"> Weigth </th>
         <th scope="col"> Description </th>
+        <th scope="col">&nbsp</th>
+        <th scope="col">&nbsp</th>
     </tr>
     </thead>
     <tbody>
@@ -41,19 +38,21 @@
         <td>{{ item.name }}</td>
         <td>{{ item.weight }}</td>
         <td>{{ item.description }}</td>
-        <td><a href="{% url 'dashboard:item_delete' pk item.pk %}" class="btn btn-primary mx-auto" role="button">Eliminar</a></td>
-        <td><a href="{% url 'dashboard:item_edit' pk item.pk %}" class="btn btn-primary mx-auto" role="button">Editar</a></td>
+        <td><a href="{% url 'dashboard:item_delete' pk item.pk %}" class="btn btn-flat flat-purple mx-auto" role="button">Eliminar</a></td>
+        <td><a href="{% url 'dashboard:item_edit' pk item.pk %}" class="btn btn-flat flat-purple mx-auto" role="button">Editar</a></td>
         </tr>
     {% endfor %}
     </tbody>
 <table>
-</div>
-</div>
-</div>
+<div class="text-center">
 <p>
-<a href="{% url 'dashboard:item' pk %}" class="btn btn-primary mx-auto" role="button">Añadir</a>
-<a href="{% url 'dashboard:pc_list' %}" class="btn btn-primary mx-auto" role="button">Volver</a> 
+<a href="{% url 'dashboard:item' pk %}" class="btn btn-flat flat-purple mx-auto" role="button">Añadir</a>
+<a href="{% url 'dashboard:pc_list' %}" class="btn btn-flat flat-purple mx-auto" role="button">Volver</a> 
 </p>
+</div>
+</div>
+</div>
+</div>
 {% endblock content %}
 
 <!-- Custom script -->

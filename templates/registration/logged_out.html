@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Logged out</title>
-</head>
-<body>
-    <p>Logged out!</p>
-    <a href="{% url 'login' %}">Click here to login again.</a>
-</body>
-</html>
+{% extends 'base/base.html' %}
+{% load static %}
+
+<!-- Page info -->
+{% block description %}{% endblock description %}
+{% block author %}{% endblock author %}
+{% block title %}Log out{% endblock title %}
+
+<!-- Custom CSS -->
+{% block base_style %}{% static 'base/css/base.css' %}{% endblock base_style %}
+{% block page_style %}{% endblock page_style %}
+
+<!-- Custom classes -->
+{% block html_class %}{% endblock html_class %}
+{% block body_class %}{% endblock body_class %}
+
+<!-- Content -->
+{% block content %}
+<div class="container">
+<div class="row">
+<div class="col-md-4 offset-md-4">
+<br>
+<br>
+<br>
+<br>
+<p class="menu-font">Logged out!</p>
+<a class="btn btn-flat flat-purple mx-auto" href="{% url 'login' %}">Click here to login again</a>
+</div>
+</div>
+</div>
+{% endblock content %}
+
+<!-- Custom script -->
+{% block script %}
+{% endblock script %}
