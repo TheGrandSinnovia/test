@@ -17,18 +17,18 @@
 
 <!-- Content -->
 {% block content %}
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-4">
 <form method="POST">
     {% csrf_token %}
-    {% for  field in form %}
-        {{ field.label }} 
-        <br>
-        <br> 
-        {{ field }}
-        <br>
-        <br>
-    {% endfor %}
-    <input type="submit" class="btn btn-flat flat-purple mx-auto" value="Submit">
+    {% include 'base/includes/form.html' with form=form %}
+    <br>
+    <input type="submit" class="btn btn-flat flat-purple mx-auto w-100" value="Submit">
 </form>
+</div>
+</div>
+</div>
 {% endblock content %}
 
 <!-- Custom script -->
